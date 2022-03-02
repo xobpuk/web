@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta name="viewport" content="width=device.width, intial-scale=1">
+    <title>Task dva</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .img-container {
+            width: 70%;
+            margin: 15px;
+        }
+
+        .img-container p {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .img-container img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="img-container">
+            <img src="one.png">
+            <p>telnet u47572.kubsu-dev.ru 80<br />GET /index.html HTTP/1.0</p>
+        </div>
+        <div class="img-container">
+            <img src="two.png">
+            <p>telnet u47572.kubsu-dev.ru 80<br />
+                GET /back01/ HTTP/1.1<br />
+                HOST: u47572.kubsu-dev.ru
+            </p>
+        </div>
+        <div class="img-container">
+            <img src="three.png">
+            <p>telnet u47572.kubsu-dev.ru 80<br />
+                HEAD /back01/file.tar.gz HTTP/1.1<br />
+                HOST: u47572.kubsu-dev.ru
+            </p>
+        </div>
+        <div class="img-container">
+            <img src="four.png">
+            <p>telnet u47572.kubsu-dev.ru 80<br />
+                HEAD /back01/image.png HTTP/1.1<br />
+                HOST: u47572.kubsu-dev.ru
+            </p>
+        </div>
+        <div class="img-container">
+            <img src="five.png">
+            <p>telnet u47572.kubsu-dev.ru 80<br />
+                POST /back01/index.php HTTP/1.1<br />
+                HOST: u47572.kubsu-dev.ru<br/>
+                Content-Type: application/x-www-form-urlencoded<br/>
+                Content-Length: 12<br/>
+                <br/>
+                comment=test
+            </p>
+        </div>
+        <div class="img-container">
+            <img src="six.png">
+            <p>telnet u47572.kubsu-dev.ru 80<br />
+                GET /back01/index.php HTTP/1.1<br />
+                HOST: u47572.kubsu-dev.ru<br/>
+                Range: bytes=0-100
+            </p>
+        </div>
+        <div class="img-container">
+            <img src="seven.png">
+            <p>telnet u47572.kubsu-dev.ru 80<br />
+                HEAD /back01/index.php HTTP/1.1<br />
+                HOST: u47572.kubsu-dev.ru
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
