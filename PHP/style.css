@@ -14,10 +14,7 @@ body {
 }
 
 .form-container {
-     background: linear-gradient(to bottom, 
-        #ffffff 33.3%, 
-        #0000ff 33.3% 66.6%, 
-        #ff0000 66.6%);
+     background-color:#4B0082;
     display:flex;
     justify-content: space-between;
     flex-direction: column;
