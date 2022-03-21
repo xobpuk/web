@@ -14,7 +14,7 @@ body {
 }
 
 .form-container {
-    background-color:#b400b4
+    background-color:#b400b4;
     display:flex;
     justify-content: space-between;
     flex-direction: column;
