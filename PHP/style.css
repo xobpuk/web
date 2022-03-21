@@ -63,21 +63,10 @@ body {
 }
 
 #send-btn {
-	background: linear-gradient(
-		to bottom,
-		#e40303,
-		#e40303 16.67%,
-		#ff8c00 16.67%,
-		#ff8c00 33.33%,
-		#ffed00 33.33%,
-		#ffed00 50%,
-		#008026 50%,
-		#008026 66.67%,
-		#004dff 66.67%,
-		#004dff 83.33%,
-		#750787 83.33%,
-		#750787
-		);
+	 background: linear-gradient(to bottom, 
+        #ffffff 33.3%, 
+        #0000ff 33.3% 66.6%, 
+        #ff0000 66.6%);
     display: block;
     width: 100%;
 }
