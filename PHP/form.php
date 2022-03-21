@@ -16,7 +16,7 @@
         <form method="POST" action="">
             <div class="input-group">
                 <span class="input-group-text" id="basic-addon1">Имя</span>
-                <input type="text" class="form-control" name="name" aria-describedby="basic-addon1" placeholder="Тарас" />
+                <input type="text" class="form-control" name="name" aria-describedby="basic-addon1" placeholder="Валера" />
             </div>
             <div class="input-group">
                 <span class="input-group-text" id="basic-addon2">Email</span>
