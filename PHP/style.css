@@ -14,6 +14,7 @@ body {
 }
 
 .form-container {
+    background-color:#b400b4
     display:flex;
     justify-content: space-between;
     flex-direction: column;
@@ -63,7 +64,7 @@ body {
 
 #send-btn {
    .lgbt {
-	background: linear-gradient(180deg, #FE0000 16.66%,
+	background-color: linear-gradient(180deg, #FE0000 16.66%,
 		#FD8C00 16.66%, 33.32%,
 		#FFE500 33.32%, 49.98%,
 		#119F0B 49.98%, 66.64%,
