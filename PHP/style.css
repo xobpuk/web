@@ -32,7 +32,7 @@ body {
 .form-container .form-title {
     align-self: flex-start;
     font-size: 22px;
-    color: #a000a0;
+    color: #7fffd4;
     padding-bottom: 10px;
     border-bottom: 1px solid rgba(168,210,227, 1);
     display: block;
@@ -63,14 +63,21 @@ body {
 }
 
 #send-btn {
-   .lgbt {
-	background-color: linear-gradient(180deg, #FE0000 16.66%,
-		#FD8C00 16.66%, 33.32%,
-		#FFE500 33.32%, 49.98%,
-		#119F0B 49.98%, 66.64%,
-		#0644B3 66.64%, 83.3%,
-		#C22EDC 83.3%);
-}
+	background: linear-gradient(
+		to bottom,
+		#e40303,
+		#e40303 16.67%,
+		#ff8c00 16.67%,
+		#ff8c00 33.33%,
+		#ffed00 33.33%,
+		#ffed00 50%,
+		#008026 50%,
+		#008026 66.67%,
+		#004dff 66.67%,
+		#004dff 83.33%,
+		#750787 83.33%,
+		#750787
+		);
     display: block;
     width: 100%;
 }
