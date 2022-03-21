@@ -64,17 +64,17 @@ $limbs = $_POST['limbs'];
 $policy = $_POST['policy'];
 $powers = implode(',',$_POST['select']);
 
-$user = 'u47572';
-$pass = '4532025';
-$db = new PDO('mysql:host=localhost;dbname=u47572', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+$user = 'u47582';
+$pass = '5597107';
+$db = new PDO('mysql:host=localhost;dbname=u47582', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 
 // Подготовленный запрос. Не именованные метки.
 try {
-  $stmt = $db->prepare("INSERT INTO clients SET name = ?, email = ?, date = ?, gender = ?, limbs = ?, policy = ?");
+  $stmt = $db->prepare("INSERT INTO users SET name = ?, email = ?, date = ?, gender = ?, limbs = ?, policy = ?");
   $stmt -> execute(array($name, $email, $date, $gender, $limbs, $policy));
   $power_id = $db->lastInsertId();
   
-  $superpowers = $db->prepare("INSERT INTO superpowers SET power_id = ?, powers = ?");
+  $superpowers = $db->prepare("INSERT INTO powers SET power_id = ?, powers = ?");
   $superpowers -> execute(array($power_id, $powers));
 }
 catch(PDOException $e){
