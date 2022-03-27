@@ -1,0 +1,4 @@
+﻿  MyForm.cpp
+C:\Users\Андрей\source\repos\grafic\grafic\MyForm.cpp(10,48): warning C4829: Возможно, неправильные параметры функции main. Рекомендуемый вариант - "int main(Platform::Array<Platform::String^>^ argv)"
+  MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  grafic.vcxproj -> C:\Users\Андрей\source\repos\grafic\x64\Debug\Grafic.exe

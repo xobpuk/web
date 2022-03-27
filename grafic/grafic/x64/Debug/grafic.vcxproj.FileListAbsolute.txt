@@ -1,0 +1,4 @@
+C:\Users\Андрей\source\repos\grafic\grafic\x64\Debug\grafic.vcxproj.AssemblyReference.cache
+C:\Users\Андрей\source\repos\grafic\grafic\x64\Debug\grafic.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\Андрей\source\repos\grafic\grafic\x64\Debug\grafic.MyForm.resources
+C:\Users\Андрей\source\repos\grafic\grafic\x64\Debug\grafic.vcxproj.GenerateResource.cache
