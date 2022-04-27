@@ -34,7 +34,7 @@
                 <span class="block-title">Дата рождения</span>
                 <input type="date" class="form-control" placeholder="example@mail.ru"
                     name="date" 
-                    <?php if ($errors['birth']) { print 'class="error"';} ?> value="<?php print $values['birth']; ?>"/>
+                    <?php if ($errors['date']) { print 'class="error"';} ?> value="<?php print $values['date']; ?>"/>
             </div>
             <div class="block" id="gender-block">
                 <span class="block-title">Пол</span>
