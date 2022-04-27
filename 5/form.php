@@ -72,9 +72,9 @@
             </div>
             <div class="block">
                 <span class="block-title">Способности</span>
-                <select class="form-select form-select-lg mb-2" name="abilities[]" multiple <?php if ($errors['abilities']) {print 'class="error"';} ?>>
+                <select class="form-select form-select-lg mb-2" name="select[]" multiple <?php if ($errors['select']) {print 'class="error"';} ?>>
                     <option value="endless life" 
-                    <?php $arr = explode(',', $values['abilities']);
+                    <?php $arr = explode(',', $values['select']);
                                         if ($arr != '') {
                                             foreach ($arr as $value) {
                                                 if ($value == "endless life") {
@@ -83,7 +83,7 @@
                                             }
                                         }
                                         ?>>Бессмертие</option>
-                    <option value="through walls" <?php $arr = explode(',', $values['abilities']);
+                    <option value="through walls" <?php $arr = explode(',', $values['select']);
                                         if ($arr != '') {
                                             foreach ($arr as $value) {
                                                 if ($value == "through walls") {
@@ -92,7 +92,7 @@
                                             }
                                         }
                                         ?>>Прохождение сквозь стены</option>
-                    <option value="levitation" <?php $arr = explode(',', $values['abilities']);
+                    <option value="levitation" <?php $arr = explode(',', $values['select']);
                                         if ($arr != '') {
                                             foreach ($arr as $value) {
                                                 if ($value == "levitation") {
