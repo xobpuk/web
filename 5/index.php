@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
       $result = $stmt->fetch(PDO::FETCH_ASSOC);
       $values['name'] = $result['name'];
       $values['email'] = $result['email'];
-      $values['birth'] = $result['date'];
+      $values['birth'] = $result['birth'];
       $values['gender'] = $result['gender'];
       $values['limbs'] = $result['limbs'];
       $values['bio'] = $result['bio'];
@@ -209,7 +209,7 @@ else {
   $pass = '5597107';
   $name = $_POST['name'];
   $email = $_POST['email'];
-  $date = $_POST['birth'];
+  $birth = $_POST['birth'];
   $gender = $_POST['gender'];
   $limbs = $_POST['limbs'];
   $bio = $_POST['bio'];
@@ -221,8 +221,8 @@ else {
   // Проверяем меняются ли ранее сохраненные данные или отправляются новые.
   if (!empty($_COOKIE[session_name()]) && session_start() && !empty($_SESSION['login'])) {
     try {
-      $stmt = $db->prepare("UPDATE members SET name = ?, email = ?, date = ?, gender = ?, limbs = ?, bio = ?, policy = ? WHERE login = ?");
-      $stmt->execute(array($name, $email, $date, $gender, $limbs, $bio, $policy, $member));
+      $stmt = $db->prepare("UPDATE members SET name = ?, email = ?, birth = ?, gender = ?, limbs = ?, bio = ?, policy = ? WHERE login = ?");
+      $stmt->execute(array($name, $email, $birth, $gender, $limbs, $bio, $policy, $member));
 
       $superpowers = $db->prepare("UPDATE powers2 SET powers = ? WHERE user_login = ? ");
       $superpowers->execute(array($powers, $member));
@@ -241,8 +241,8 @@ else {
     setcookie('pass', $password);
 
     try {
-      $stmt = $db->prepare("INSERT INTO members SET login = ?, pass = ?, name = ?, email = ?, date = ?, gender = ?, limbs = ?, bio = ?, policy = ?");
-      $stmt->execute(array($login, $hash, $name, $email, $date, $gender, $limbs, $bio, $policy));
+      $stmt = $db->prepare("INSERT INTO members SET login = ?, pass = ?, name = ?, email = ?, birth = ?, gender = ?, limbs = ?, bio = ?, policy = ?");
+      $stmt->execute(array($login, $hash, $name, $email, $birth, $gender, $limbs, $bio, $policy));
 
       $superpowers = $db->prepare("INSERT INTO powers2 SET powers = ?, user_login = ? ");
       $superpowers->execute(array($powers, $login));
