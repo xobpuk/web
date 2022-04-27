@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $errors = array();
   $errors['name'] = !empty($_COOKIE['name_error']);
   $errors['email'] = !empty($_COOKIE['email_error']);
-  $errors['birth'] = !empty($_COOKIE['birth_error']);
+  $errors['date'] = !empty($_COOKIE['date_error']);
   $errors['gender'] = !empty($_COOKIE['gender_error']);
   $errors['limbs'] = !empty($_COOKIE['limbs_error']);
   $errors['select'] = !empty($_COOKIE['select_error']);
@@ -47,8 +47,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     setcookie('email_error', '', 100000);
     $messages[] = '<div class="error">Введите верный email.</div>';
   }
-  if ($errors['birth']) {
-    setcookie('birth_error', '', 100000);
+  if ($errors['date']) {
+    setcookie('date_error', '', 100000);
     $messages[] = '<div class="error">Введите корректную дату рождения.</div>';
   }
   if ($errors['gender']) {
@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $values = array();
   $values['name'] = empty($_COOKIE['name_value']) ? '' : strip_tags($_COOKIE['name_value']);
   $values['email'] = empty($_COOKIE['email_value']) ? '' : strip_tags($_COOKIE['email_value']);
-  $values['birth'] = empty($_COOKIE['birth_value']) ? '' : strip_tags($_COOKIE['birth_value']);
+  $values['date'] = empty($_COOKIE['date_value']) ? '' : strip_tags($_COOKIE['date_value']);
   $values['gender'] = empty($_COOKIE['gender_value']) ? '' : strip_tags($_COOKIE['gender_value']);
   $values['limbs'] = empty($_COOKIE['limbs_value']) ? '' : strip_tags($_COOKIE['limbs_value']);
   $values['select'] = empty($_COOKIE['select_value']) ? '' : strip_tags($_COOKIE['select_value']);
@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
       $result = $stmt->fetch(PDO::FETCH_ASSOC);
       $values['name'] = $result['name_value'];
       $values['email'] = $result['email_value'];
-      $values['birth'] = $result['birth_value'];
+      $values['date'] = $result['date_value'];
       $values['gender'] = $result['gender_value'];
       $values['limbs'] = $result['limbs_value'];
       $values['bio'] = $result['bio_value'];
@@ -144,13 +144,13 @@ else {
   }
 
   // проверка поля даты рождения
-  $birth = explode('-', $_POST['birth']);
-  $age = (int)date('Y') - (int)$birth[0];
+  $date = explode('-', $_POST['date']);
+  $age = (int)date('Y') - (int)$date[0];
   if ($age > 100 || $age < 0) {
-    setcookie('birth_error', '1', time() + 24 * 60 * 60);
+    setcookie('date_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
   } else {
-    setcookie('birth_value', $_POST['birth'], time() + 12 * 30 * 24 * 60 * 60);
+    setcookie('date_value', $_POST['date'], time() + 12 * 30 * 24 * 60 * 60);
   }
 
   // проверка поля пола
@@ -200,7 +200,7 @@ else {
   } else {
     setcookie('name_error', '', 100000);
     setcookie('email_error', '', 100000);
-    setcookie('birth_error', '', 100000);
+    setcookie('date_error', '', 100000);
     setcookie('gender_error', '', 100000);
     setcookie('limbs_error', '', 100000);
     setcookie('select_error', '', 100000);
@@ -209,7 +209,7 @@ else {
   }
   $name = $_COOKIE['name_value'];
   $email = $_COOKIE['email_value'];
-  $date = $_COOKIE['birth_value'];
+  $date = $_COOKIE['date_value'];
   $gender = $_COOKIE['gender_value'];
   $limbs = $_COOKIE['limbs_value'];
   $bio = $_COOKIE['bio_value'];
