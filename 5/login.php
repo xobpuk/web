@@ -1,16 +1,4 @@
-<?php error_reporting(0); ?> 
 <?php
-
-/**
- * Файл login.php для не авторизованного пользователя выводит форму логина.
- * При отправке формы проверяет логин/пароль и создает сессию,
- * записывает в нее логин и id пользователя.
- * После авторизации пользователь перенаправляется на главную страницу
- * для изменения ранее введенных данных.
- **/
-
-// Отправляем браузеру правильную кодировку,
-// файл login.php должен быть в кодировке UTF-8 без BOM.
 header('Content-Type: text/html; charset=UTF-8');
 
 // Начинаем сессию.
@@ -25,16 +13,21 @@ if (!empty($_SESSION['login'])) {
 // В суперглобальном массиве $_SERVER PHP сохраняет некторые заголовки запроса HTTP
 // и другие сведения о клиненте и сервере, например метод текущего запроса $_SERVER['REQUEST_METHOD'].
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-  if (!$_GET['error']) {
-    print('<div style="color: red; font-size: 16px; text-align: center;"');
-    print('Неверный пароль/логин проверьте корректность введенных данных</div>');
+  if (!empty($_GET['logout'])) {
+    session_destroy();
+    $_SESSION['login'] = '';
+    header('Location: ./');
+  }
+  if (!empty($_GET['error'])) {
+    print('<div>Не верный пароль/логин проверьте корректность введенных данных</div>');
   }
 ?>
+
   <form action="" method="POST">
     <span>Логин:</span>
-    <input name="login" value=<?php $_SESSION['login'] ?> />
+    <input name="login" />
     <span>Пароль:</span>
-    <input name="pass" value=<?php $_SESSION['pass'] ?> />
+    <input name="pass" />
     <input type="submit" value="Войти" />
   </form>
 
@@ -44,24 +37,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 else {
   $user = 'u47582';
   $pass = '5597107';
-  $db = new PDO('mysql:host=localhost;dbname=u47582', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+  $db = new PDO('mysql:host=localhost;dbname=u47572', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 
   $member = $_POST['login'];
   $member_pass_hash = md5($_POST['pass']);
 
+  try {
+    $stmt = $db->prepare("SELECT * FROM members WHERE login = ?");
+    $stmt->execute(array($member));
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+  } catch (PDOException $e) {
+    print('Error : ' . $e->getMessage());
+    exit();
+  }
+  if ($result['pass'] == $member_pass_hash) {
 
-  $stmt = $db->prepare("SELECT * FROM members WHERE login = ? and pass = ?");
-  $stmt->execute(array($member, $member_pass_hash));
-  $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-  if (empty($result)) {
-    header('Location: ?error=0');
-  } else {
-    // Если все ок, то авторизуем пользователя.
     $_SESSION['login'] = $_POST['login'];
-    // Записываем ID пользователя.
     $_SESSION['uid'] = $result['id'];
-    // Делаем перенаправление.
+
     header('Location: ./');
+  } else {
+    header('Location: ?error=1');
   }
 }
