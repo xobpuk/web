@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: text/html; charset=UTF-8');
-$user = 'u47572';
-$pass = '4532025';
+$user = 'u47582';
+$pass = '5597107';
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   // Массив для временного хранения сообщений пользователю.
@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   ) {
     $member = $_SESSION['login'];
     try {
-      $db = new PDO('mysql:host=localhost;dbname=u47572', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+      $db = new PDO('mysql:host=localhost;dbname=u47582', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
       $stmt = $db->prepare("SELECT * FROM members WHERE login = ?");
       $stmt->execute(array($member));
       $result = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -217,7 +217,7 @@ else {
   $powers = implode(',', $_COOKIE['select_value']);
   $member = $_SESSION['login'];
 
-  $db = new PDO('mysql:host=localhost;dbname=u47572', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+  $db = new PDO('mysql:host=localhost;dbname=u47582', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
   // Проверяем меняются ли ранее сохраненные данные или отправляются новые.
   print('<div style="color: red; font-size: 16px; text-align: center;"');
   print("I'm here</div>");
