@@ -30,11 +30,11 @@
                     placeholder="example@mail.ru" 
                     <?php if ($errors['email']) {print 'class="error"';} ?> value="<?php print $values['email']; ?>"/>
             </div>
-            <div class="block" id="date-block">
+            <div class="block" id="birth-block">
                 <span class="block-title">Р”Р°С‚Р° СЂРѕР¶РґРµРЅРёСЏ</span>
-                <input type="date" class="form-control" placeholder="example@mail.ru"
-                    name="date" 
-                    <?php if ($errors['date']) { print 'class="error"';} ?> value="<?php print $values['date']; ?>"/>
+                <input type="birth" class="form-control" placeholder="example@mail.ru"
+                    name="birth" 
+                    <?php if ($errors['birth']) { print 'class="error"';} ?> value="<?php print $values['birth']; ?>"/>
             </div>
             <div class="block" id="gender-block">
                 <span class="block-title">РџРѕР»</span>
