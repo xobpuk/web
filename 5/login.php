@@ -1,3 +1,4 @@
+<?php error_reporting(0); ?> 
 <?php
 
 /**
@@ -26,7 +27,7 @@ if (!empty($_SESSION['login'])) {
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   if (!$_GET['error']) {
     print('<div style="color: red; font-size: 16px; text-align: center;"');
-    print('Не верный пароль/логин проверьте корректность введенных данных</div>');
+    print('Неверный пароль/логин проверьте корректность введенных данных</div>');
   }
 ?>
   <form action="" method="POST">
