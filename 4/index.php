@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $errors = array();
     $errors['name'] = !empty($_COOKIE['name_error']);
     $errors['email'] = !empty($_COOKIE['email_error']);
-    $errors['birth'] = !empty($_COOKIE['birth_error']);
+    $errors['date'] = !empty($_COOKIE['date_error']);
     $errors['gender'] = !empty($_COOKIE['gender_error']);
     $errors['limbs'] = !empty($_COOKIE['limbs_error']);
     $errors['abilities'] = !empty($_COOKIE['abilities_error']);
@@ -28,8 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         setcookie('email_error', '', 100000);
         $messages[] = '<div class="error">Введите корректный email.</div>';
     }
-    if ($errors['birth']) {
-        setcookie('birth_error', '', 100000);
+    if ($errors['date']) {
+        setcookie('date_error', '', 100000);
         $messages[] = '<div class="error">Введите корректную дату рождения.</div>';
     }
     if ($errors['gender']) {
