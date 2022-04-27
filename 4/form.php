@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8" />
@@ -72,4 +73,47 @@
             <div class="block">
                 <span class="block-title">Способности</span>
                 <select class="form-select form-select-lg mb-2" name="abilities[]" multiple <?php if ($errors['abilities']) {print 'class="error"';} ?>>
-                    <option value="endless life"
+                    <option value="endless life" 
+                    <?php $arr = explode(',', $values['abilities']);
+                                        if ($arr != '') {
+                                            foreach ($arr as $value) {
+                                                if ($value == "endless life") {
+                                                    print 'selected';
+                                                }
+                                            }
+                                        }
+                                        ?>>Бессмертие</option>
+                    <option value="through walls" <?php $arr = explode(',', $values['abilities']);
+                                        if ($arr != '') {
+                                            foreach ($arr as $value) {
+                                                if ($value == "through walls") {
+                                                    print 'selected';
+                                                }
+                                            }
+                                        }
+                                        ?>>Прохождение сквозь стены</option>
+                    <option value="levitation" <?php $arr = explode(',', $values['abilities']);
+                                        if ($arr != '') {
+                                            foreach ($arr as $value) {
+                                                if ($value == "levitation") {
+                                                    print 'selected';
+                                                }
+                                            }
+                                        }
+                                        ?>>Левитация</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <textarea class="form-control" placeholder="Расскажите о себе..." name="bio" <?php if ($errors['bio']) {print 'class="error"';} ?>>
+                <?php print $values['bio']; ?>
+            </textarea>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="y" id="policy" name="policy" checked/>
+                <label class="form-check-label" for="policy">Согласен с политикой обработки данных</label>
+            </div>
+            <button class="btn btn-primary" type="submit" id="send-btn">Отправить</button>
+        </form>
+    </div>
+</body>
+</html>
