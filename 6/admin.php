@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header('Location: ?delete_error=0');
         }
     } else if (!empty($_POST['edit'])) {
-        $user = 'u47583';
+        $user = 'u47582';
         $pass = '5597107';
         $member_id = $_POST['edit'];
 
