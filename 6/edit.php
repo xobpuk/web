@@ -27,7 +27,7 @@
       </div>
       <div class="input-group">
         <span class="input-group-text" id="basic-addon3">Дата рождения</span>
-        <input type="date" class="form-control" aria-describedby="basic-addon3" placeholder="example@mail.ru" name="birth" value="<?php print $values['birth']; ?>" />
+        <input type="date" class="form-control" aria-describedby="basic-addon3" placeholder="example@mail.ru" name="date" value="<?php print $values['date']; ?>" />
       </div>
       <div class="form-check" id="gender-block">
         <span class="input-group-text">Пол</span>
