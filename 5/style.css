@@ -73,9 +73,7 @@ background-color:#98ff98;
 .error {
    color: #cd00cd;
     border: 1px solid #cd00cd;
-    position: absolute;
-    top: 20%;
-    left: 15%;
+    
 }
 .radios {
     display: flex;
